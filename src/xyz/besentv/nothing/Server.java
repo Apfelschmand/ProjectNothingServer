@@ -87,7 +87,7 @@ public class Server implements PacketReceivedEvent, TickEvent {
                     MessagePacket messagePacket = new MessagePacket(packet);
                     sender = getClientByAddress(packet.getAddress(), packet.getPort());
                     if (sender != null) {
-                        sendToAllClients(new String("Message from " + sender.getName() + ":" + messagePacket.getMessage()));
+                        sendToAllClients(new String("Message from " + sender.getName() + ": " + messagePacket.getMessage()));
                         break;
                     }
                     System.out.println("Dismissed message from " + packet.getAddress() + ":" + packet.getPort());
